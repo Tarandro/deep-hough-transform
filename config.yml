@@ -22,8 +22,8 @@ OPTIMIZER:
     STEPS: []
 
 MODEL:
-    NUMANGLE: 200
-    NUMRHO: 200
+    NUMANGLE: 100
+    NUMRHO: 100
     FIX: True
     THRESHOLD: 0.01
     EDGE_ALIGN: False
@@ -31,7 +31,7 @@ MODEL:
     # only support : resnet18, resnet50, resnet101, mobilenetv2, resnext50, res2net50, vgg16
 
 TRAIN:
-    EPOCHS: 40
+    EPOCHS: 35
     PRINT_FREQ: 100
     TEST: False
     SEED: 1997
