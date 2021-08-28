@@ -52,13 +52,14 @@ for idx, label_file in enumerate(labels_files):
     print("Processing %s [%d/%d]..." % (filename, idx+1, len(labels_files)))
     if isfile(join(image_dir, filename+".jpg")):
         im = cv2.imread(join(image_dir, filename+".jpg"))
+        H, W, _ = im.shape
         im = cv2.resize(im, (args.fixsize, args.fixsize))
     else:
         print("Warning: image %s doesnt exist!" % join(image_dir, filename+".jpg"))
         continue
     for argument in range(2):
         if argument == 0:
-            H, W, _ = im.shape
+
             lines = []
             with open(join(label_path, label_file)) as f:
                 data = f.readlines()
@@ -77,7 +78,6 @@ for idx, label_file in enumerate(labels_files):
         else:
             im = cv2.flip(im, 1)
             filename = filename + '_flip'
-            H, W, _ = im.shape
             lines = []
             with open(join(label_path, label_file)) as f:
                 data = f.readlines()
