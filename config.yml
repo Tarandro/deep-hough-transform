@@ -15,7 +15,7 @@ DATA:
     WORKERS: 4
 
 OPTIMIZER:
-    LR: 2e-4
+    LR: 1e-5 #2e-4
     MOMENTUM: 0.9
     GAMMA: 0.1
     WEIGHT_DECAY: 0
@@ -31,7 +31,7 @@ MODEL:
     # only support : resnet18, resnet50, resnet101, mobilenetv2, resnext50, res2net50, vgg16
 
 TRAIN:
-    EPOCHS: 30
+    EPOCHS: 45
     PRINT_FREQ: 100
     TEST: False
     SEED: 1997

@@ -107,7 +107,7 @@ def test(test_loader, model, args):
             scale_w = size[1] / 400
             scale_h = size[0] / 400
             for i in range(len(b_points)):
-                y1 = int(np.round(b_points[i][0] * scale_h))
+                y1 = int(np.round(b_points[i][0] * scale_h))  # no int
                 x1 = int(np.round(b_points[i][1] * scale_w))
                 y2 = int(np.round(b_points[i][2] * scale_h))
                 x2 = int(np.round(b_points[i][3] * scale_w))
