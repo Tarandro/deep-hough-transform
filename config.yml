@@ -1,7 +1,7 @@
 DATA:
     DIR: "/content/nfl_resize/"
     VAL_DIR: "/content/nfl_resize_test/"
-    TEST_DIR: "/content/nfl_resize_test/"
+    TEST_DIR: "/content/test/test/"
     LABEL_FILE: "/content/train_idx.txt"
     VAL_LABEL_FILE: "/content/test_idx.txt"
     TEST_LABEL_FILE: "/content/test_idx.txt"

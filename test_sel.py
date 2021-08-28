@@ -31,11 +31,9 @@ for filename in filenames:
     pred = np.load(os.path.join(pred_path, filename))
     if arg.align:
         pred_align = np.load(os.path.join(pred_path, filename.split('.')[0]+'_align.npy'))
-    print(pred)
     gt_txt = open(os.path.join(gt_path, filename.split('.')[0] + '.txt'))
     gt_coords = gt_txt.readlines()
     gt = [[int(float(l.rstrip().split(', ')[1])), int(float(l.rstrip().split(', ')[0])), int(float(l.rstrip().split(', ')[3])), int(float(l.rstrip().split(', ')[2]))] for l in gt_coords]
-    print(gt)
     for i in range(1, 100):
         tp, fp, fn = caculate_tp_fp_fn(pred.tolist(), gt, thresh=i*0.01)
         total_tp[i-1] += tp
@@ -46,7 +44,6 @@ for filename in filenames:
             total_tp_align[i-1] += tp
             total_fp_align[i-1] += fp
             total_fn_align[i-1] += fn
-    print(tp, fp)
     # print('done')
 
     
