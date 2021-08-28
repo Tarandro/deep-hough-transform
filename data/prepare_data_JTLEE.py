@@ -109,6 +109,8 @@ for idx, label_file in enumerate(labels_files):
         hough_space_label = np.zeros((args.numangle, args.numrho))
         for l in annotation.lines:
             theta, r = line2hough(l, numAngle=args.numangle, numRho=args.numrho, size=(newH, newW))
+            if r >= args.numrho:
+                r = args.numrho - 1
             hough_space_label[theta, r] += 1
 
         hough_space_label = cv2.GaussianBlur(hough_space_label, (5,5), 0)
