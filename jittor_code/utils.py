@@ -42,6 +42,8 @@ def line2hough(line, numAngle, numRho, size=(32, 32)):
     alpha = int(np.round(alpha / itheta))
     if alpha >= numAngle:
         alpha = numAngle - 1
+    if r >= numRho:
+        r = numRho - 1
     return alpha, r
 
 def line2hough_float(line, numAngle, numRho, size=(32, 32)):
