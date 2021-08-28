@@ -1,9 +1,9 @@
 DATA:
     DIR: "/content/nfl_resize/"
-    VAL_DIR: "/content/nfl_resize/"
+    VAL_DIR: "/content/nfl_resize_test/"
     TEST_DIR: "/content/nfl_resize_test/"
     LABEL_FILE: "/content/train_idx.txt"
-    VAL_LABEL_FILE: "/content/train_idx.txt"
+    VAL_LABEL_FILE: "/content/test_idx.txt"
     TEST_LABEL_FILE: "/content/test_idx.txt"
     # DIR: "data/training/"
     # VAL_DIR: "data/training/"
@@ -40,4 +40,4 @@ TRAIN:
     RESUME: 
 
 MISC:
-    TMP: "./result/reproduce"
+    TMP: "/content/result/reproduce"
