@@ -63,7 +63,6 @@ for idx, label_file in enumerate(labels_files):
             with open(join(label_path, label_file)) as f:
                 data = f.readlines()
                 nums = len(data)
-                stastic[nums] += 1
                 for line in data:
                     data1 = line.strip().split(',')
                     if len(data1) <= 4:
