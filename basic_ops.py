@@ -32,8 +32,10 @@ class Line(object):
 
     def rescale(self, rh, rw):
         coor = np.array(self.__coordinates)
+        print(coor)
         r = np.array([rh, rw, rh, rw])
         self.__coordinates = np.round(coor * r).astype(np.int).tolist()
+        print(np.round(coor * r).astype(np.int).tolist())
 
     def __repr__(self):
         return str(self.coord)
@@ -150,11 +152,12 @@ class LineAnnotation(object):
         H, W = size
         rH = H / self.size[0]
         rW = W / self.size[1]
-
+        print(rH, rW)
         self.size = [H, W]
 
         for l in self.lines:
             l.rescale(rh=rH, rw=rW)
+
 
         self.__mask = None
         self.__oriental_mask = None
