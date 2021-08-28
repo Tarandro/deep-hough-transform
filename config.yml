@@ -4,7 +4,7 @@ DATA:
     TEST_DIR: "/content/image_nfl_s/image_nfl_s/"
     LABEL_FILE: "/content/train_idx.txt"
     VAL_LABEL_FILE: "/content/test_idx.txt"
-    TEST_LABEL_FILE: "/content/test_idx.txt"
+    TEST_LABEL_FILE: "/content/test_idx_sideline.txt"
     # DIR: "data/training/"
     # VAL_DIR: "data/training/"
     # TEST_DIR: "data/training"
