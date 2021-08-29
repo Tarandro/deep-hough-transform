@@ -95,9 +95,7 @@ def test(test_loader, model, args):
             visualize_save_path = os.path.join(CONFIGS["MISC"]["TMP"], 'visualize_test')
             os.makedirs(visualize_save_path, exist_ok=True)
 
-            print(key_points.squeeze().cpu().numpy())
             binary_kmap = key_points.squeeze().cpu().numpy() > CONFIGS['MODEL']['THRESHOLD']
-            print(binary_kmap)
             kmap_label = label(binary_kmap, connectivity=1)
             props = regionprops(kmap_label)
             plist = []
