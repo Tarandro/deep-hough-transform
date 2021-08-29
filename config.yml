@@ -31,7 +31,7 @@ MODEL:
     # only support : resnet18, resnet50, resnet101, mobilenetv2, resnext50, res2net50, vgg16
 
 TRAIN:
-    EPOCHS: 15
+    EPOCHS: 40
     PRINT_FREQ: 100
     TEST: False
     SEED: 1997
