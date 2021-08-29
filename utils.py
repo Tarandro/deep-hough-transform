@@ -83,7 +83,7 @@ def reverse_mapping(point_list, numAngle, numRho, size=(32, 32)):
     return b_points
 
 def visulize_mapping(b_points, size, filename):
-    img = cv2.imread(os.path.join('/content/image_nfl_s2/image_nfl_s2', filename)) #nfl_resize_test
+    img = cv2.imread(os.path.join('/content/nfl_resize_test', filename)) #nfl_resize_test   image_nfl_s2/image_nfl_s2
     img = cv2.resize(img, size)
     for (y1, x1, y2, x2) in b_points:
         img = cv2.line(img, (x1, y1), (x2, y2), (255, 255, 0), thickness=int(0.01*max(size[0], size[1])))
