@@ -15,7 +15,7 @@ DATA:
     WORKERS: 4
 
 OPTIMIZER:
-    LR: 2e-4
+    LR: 1e-5 #2e-4
     MOMENTUM: 0.9
     GAMMA: 0.1
     WEIGHT_DECAY: 0
