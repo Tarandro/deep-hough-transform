@@ -1,4 +1,5 @@
 import math
+import torch
 import torch.nn as nn
 import torch.utils.model_zoo as model_zoo
 
@@ -223,9 +224,15 @@ class ResNet(nn.Module):
 
     def _load_pretrained_model(self):
         if self.arch == 'resnet101':
-            pretrain_dict = model_zoo.load_url('https://download.pytorch.org/models/resnet101-5d3b4d8f.pth')
+            try:
+                pretrain_dict = torch.load("/kaggle/input/nfl-resnet/resnet101-5d3b4d8f.pth")
+            except:
+                pretrain_dict = model_zoo.load_url('https://download.pytorch.org/models/resnet101-5d3b4d8f.pth')
         elif self.arch == 'resnet50':
-            pretrain_dict = model_zoo.load_url('https://download.pytorch.org/models/resnet50-19c8e357.pth')
+            try:
+                pretrain_dict = torch.load("/kaggle/input/nfl-resnet/resnet50-19c8e357.pth")
+            except:
+                pretrain_dict = model_zoo.load_url('https://download.pytorch.org/models/resnet50-19c8e357.pth')
         elif self.arch == 'resnet18':
             pretrain_dict = model_zoo.load_url('https://download.pytorch.org/models/resnet18-5c106cde.pth')
         elif self.arch == 'resnext50':
