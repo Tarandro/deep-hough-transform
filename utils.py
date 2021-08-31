@@ -83,9 +83,9 @@ def reverse_mapping(point_list, numAngle, numRho, size=(32, 32)):
     return b_points
 
 def visulize_mapping(b_points, size, filename):
-    try:
+    if os.path.exists(os.path.join('/kaggle/working/train_images', filename)):
         img = cv2.imread(os.path.join('/kaggle/working/train_images', filename)) #nfl_resize_test   image_nfl_s2/image_nfl_s2  /kaggle/working/train_images
-    except:
+    else:
         img = cv2.imread(os.path.join('/content/image_nfl_s12/image_nfl_s12', filename))
     img = cv2.resize(img, size)
     for (y1, x1, y2, x2) in b_points:
